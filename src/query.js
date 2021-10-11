@@ -4,13 +4,17 @@ const githubQuery = {
         viewer {
           name
         }
-        search(query: "api user:mahela98 sort:updated.desc", type: REPOSITORY, first: 10) {
+        search(query: " user:Paradox2405 sort:updated.desc", type: REPOSITORY, first: 20) {
           nodes {
             ... on Repository {
               name
               id
               url
               description
+              viewerSubscription
+              licenseInfo{
+                spdxId
+              }
             }
           }
         }
