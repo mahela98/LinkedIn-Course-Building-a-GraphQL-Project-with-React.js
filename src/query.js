@@ -2,9 +2,11 @@ const githubQuery = {
     query: `
     {
         viewer {
-          login
-          repositories(first: 10) {
-            nodes {
+          name
+        }
+        search(query: "api user:mahela98 sort:updated.desc", type: REPOSITORY, first: 10) {
+          nodes {
+            ... on Repository {
               name
               id
               url
@@ -13,6 +15,7 @@ const githubQuery = {
           }
         }
       }
+      
       
     `,
 };
